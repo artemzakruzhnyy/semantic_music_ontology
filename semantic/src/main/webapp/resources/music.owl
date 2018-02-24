@@ -1,0 +1,2922 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost:8080/artem/ontologies/music#"
+     xml:base="http://localhost:8080/artem/ontologies/music"
+     xmlns:music="http://localhost:8080/artem/ontologies/music#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost:8080/artem/ontologies/music">
+        <owl:versionIRI rdf:resource="http://localhost:8080/artem/ontologies/music/1.0.0"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Music Ontology</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#consistOf -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#consistOf">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#hasAlbum -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#hasAlbum">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#hasBand -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#hasBand">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#hasGenre">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#hasMusician -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#hasMusician">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#hasPerformance -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#hasPerformance">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#hasSingle -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#hasSingle">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Single"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#hasWork -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#hasWork">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#isInstrument -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#isInstrument">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Bas-guitar"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Drums"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Electric_Guitar"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Synthesizer"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#isInstrumentOf -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#isInstrumentOf">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#isMusicalWork -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#isMusicalWork">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Feat"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Single"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#isPerformance -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#isPerformance">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Concert"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Festival"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#isSongFromAlbum -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#isSongFromAlbum">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#isWorkBy -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#isWorkBy">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#memberOf">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#performedBy -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#performedBy">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#playOn -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#playOn">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#takePart -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:8080/artem/ontologies/music#takePart">
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#FirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#FirstName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#albumDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#albumDescription"/>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#album_wiki_link -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#album_wiki_link">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#albumDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#annotation -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#annotation">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#performanceDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#bandDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#bandDescription"/>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#best_years -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#best_years">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#genreDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#birthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#birthDate">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#birthPlace -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#birthPlace">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#brend -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#brend">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#instrumentDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#city -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#city">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#bandDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#cityMusician -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#cityMusician">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#country -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#country">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#bandDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#countryMusician -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#countryMusician">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#creationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#creationDate">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#bandDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#creation_date -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#creation_date">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#genreDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#date -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#date">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#performanceDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#durability -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#durability">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#albumDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#gender -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#gender">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#genreCountry -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#genreCountry">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#genreDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#genreDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#genreDescription"/>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#genre_wiki_link -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#genre_wiki_link">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#genreDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#instrumentDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#instrumentDescription"/>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#lang -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#lang">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#albumDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#language_Of_Songs -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#language_Of_Songs">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#bandDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#manufacturerCountry -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#manufacturerCountry">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#instrumentDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#model -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#model">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#instrumentDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#musicianDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#performanceDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#performanceDescription"/>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#releaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#releaseDate">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#albumDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#secondName -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#secondName">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#musicianDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#songDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#songDescription"/>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#ticketPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#ticketPrice">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#performanceDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#uri -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#uri">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#songDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Single"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#wiki_link -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:8080/artem/ontologies/music#wiki_link">
+        <rdfs:subPropertyOf rdf:resource="http://localhost:8080/artem/ontologies/music#bandDescription"/>
+        <rdfs:domain rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Album -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Album">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:label xml:lang="en">Album</rdfs:label>
+        <rdfs:label xml:lang="ru">Альбом</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Band -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Band">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Music"/>
+        <rdfs:label xml:lang="en">Band</rdfs:label>
+        <rdfs:label xml:lang="ru">Музыкальная группа</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Bas-guitar -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Bas-guitar">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:label xml:lang="en">Bas-guitar</rdfs:label>
+        <rdfs:label xml:lang="ru">Бас гитара</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Concert -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Concert">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+        <rdfs:label xml:lang="en">Concert</rdfs:label>
+        <rdfs:label xml:lang="ru">Концерт</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Drums -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Drums">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:label xml:lang="en">Drums</rdfs:label>
+        <rdfs:label xml:lang="ru">Барабанная установка</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Electric_Guitar -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Electric_Guitar">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:label xml:lang="en">Electric Guitar</rdfs:label>
+        <rdfs:label xml:lang="ru">Электрогитара</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Feat -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Feat">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:label xml:lang="en">Feat</rdfs:label>
+        <rdfs:label xml:lang="ru">Совместная работа</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Festival -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Festival">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Performance"/>
+        <rdfs:label xml:lang="en">Festival</rdfs:label>
+        <rdfs:label xml:lang="ru">Фестиваль</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Genre -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Genre">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Music"/>
+        <rdfs:label xml:lang="en">Genre</rdfs:label>
+        <rdfs:label xml:lang="ru">Жанр</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Instruments -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Instruments">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Music"/>
+        <rdfs:label xml:lang="en">Instrument</rdfs:label>
+        <rdfs:label xml:lang="ru">Инструмент</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Music -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Music">
+        <rdfs:label xml:lang="en">Music</rdfs:label>
+        <rdfs:label xml:lang="ru">Музыка</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Musical_Work -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Musical_Work">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Music"/>
+        <rdfs:label xml:lang="en">Musical Work</rdfs:label>
+        <rdfs:label xml:lang="ru">Музыкальная работа</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Musician -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Musician">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Music"/>
+        <rdfs:label xml:lang="en">Musician</rdfs:label>
+        <rdfs:label xml:lang="ru">Музыкант</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Performance -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Performance">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Music"/>
+        <rdfs:label xml:lang="en">Performance</rdfs:label>
+        <rdfs:label xml:lang="ru">Перформансы</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Single -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Single">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Musical_Work"/>
+        <rdfs:label xml:lang="en">Single</rdfs:label>
+        <rdfs:label xml:lang="ru">Сингл</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Song -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Song">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <rdfs:label xml:lang="en">Song</rdfs:label>
+        <rdfs:label xml:lang="ru">Песня</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Synthesizer -->
+
+    <owl:Class rdf:about="http://localhost:8080/artem/ontologies/music#Synthesizer">
+        <rdfs:subClassOf rdf:resource="http://localhost:8080/artem/ontologies/music#Instruments"/>
+        <rdfs:label xml:lang="en">Synthesizer</rdfs:label>
+        <rdfs:label xml:lang="ru">Синтезатор</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Actress_Spring -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Actress_Spring">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D1%82%D1%80%D0%B8%D1%81%D0%B0_%D0%92%D0%B5%D1%81%D0%BD%D0%B0</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.55</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1992-11-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Actress Spring</rdfs:label>
+        <rdfs:label xml:lang="ru">Актриса Весна</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Aki-Markus_Juhani_Hakala -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Aki-Markus_Juhani_Hakala">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#PEARL_RFP924XFP"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aki-Markus</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1979-09-28T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helsinki</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hakala</secondName>
+        <rdfs:label xml:lang="en">Aki-Markus Juhani Hakala</rdfs:label>
+        <rdfs:label xml:lang="ru">А́ки-Ма́ркус Ю́хани Ха́кала</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Alena_Romanova -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Alena_Romanova">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alena</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1983-09-14T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USSR</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Petersburg</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Romanova</secondName>
+        <rdfs:label xml:lang="en">Alena Romanova</rdfs:label>
+        <rdfs:label xml:lang="ru">Алена Романова</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Alexey_Fedichev -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Alexey_Fedichev">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#Fender_American_Special_Telecaster"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alexey</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1978-11-15T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USSR</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Petersburg</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fedichev</secondName>
+        <rdfs:label xml:lang="en">Alexey Fedichev</rdfs:label>
+        <rdfs:label xml:lang="ru">Алексей Федичев</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#All_That_You_Give -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#All_That_You_Give">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=T_G6zrRbyA8</uri>
+        <rdfs:label xml:lang="en">All That You Give</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#All_Things_to_All_Men -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#All_Things_to_All_Men">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=5cQTes75GKU</uri>
+        <rdfs:label xml:lang="en">All Things to All Men</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Artsiom_Mamay -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Artsiom_Mamay">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#TAMA_MA52ZS-SSR"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artem</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1989-03-12T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USSR</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Petersburg</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mamay</secondName>
+        <rdfs:label xml:lang="en">Artsiom Mamay</rdfs:label>
+        <rdfs:label xml:lang="ru">Артем Мамай</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Back_in_the_Picture -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Back_in_the_Picture">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=oTXh7f77nhs</uri>
+        <rdfs:label xml:lang="en">Back in the Picture</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Because_of_You -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Because_of_You">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=EXssfhcQ5iA</uri>
+        <rdfs:label xml:lang="en">Because of You</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Black_Roses -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Black_Roses">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Dangerous_Kind"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Justify"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Lost_and_Lonely"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Run_to_You"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Livin&apos;_in_a_World_without_You"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/Black_Roses</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.33</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-09-26T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Black Roses</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Blue -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Blue">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=YEEz3klk2Yk</uri>
+        <rdfs:label xml:lang="en">Blue</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Born_in_USSR -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Born_in_USSR">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B6%D0%B4%D1%91%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B2_%D0%A1%D0%A1%D0%A1%D0%A0</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">57.34</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1997-01-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Born in USSR</rdfs:label>
+        <rdfs:label xml:lang="ru">Рожденный в СССР</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Bullet -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Bullet">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=3hO-L3uzHOY</uri>
+        <rdfs:label xml:lang="en">Bullet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Burn_Out -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Burn_Out">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=LD2RuL2nibQ</uri>
+        <rdfs:label xml:lang="en">Burn Out</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Carousel -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Carousel">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=r5BcfF6YAwQ</uri>
+        <rdfs:label xml:lang="en">Carousel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Chill -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Chill">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=l7-sTM7XqYo</uri>
+        <rdfs:label xml:lang="en">Chill</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#City_of_the_Dead -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#City_of_the_Dead">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=W50jZ1ldP4g</uri>
+        <rdfs:label xml:lang="en">City of the Dead</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Compromise -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Compromise">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D1%80%D0%BE%D0%BC%D0%B8%D1%81%D1%81_(%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%BC)</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">34.2</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#float">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1983-01-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Compromise</rdfs:label>
+        <rdfs:label xml:lang="ru">Компромисс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#DDT -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#DDT">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Alena_Romanova"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Alexey_Fedichev"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Artsiom_Mamay"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Konstantin_Shumailov"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Roman_Nevelov"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Yri_Shevchuk"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Actress_Spring"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Born_in_USSR"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Compromise"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Lovely_Love"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Missing"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Otherwise"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Periphery"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Pig_on_Rainbow"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Thaw"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Time"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Transparent"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Unity_Part_I"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#August&apos;s_Snowstorm"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#It&apos;s_all"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <takePart rdf:resource="http://localhost:8080/artem/ontologies/music#History_of_Sound"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">St.Petersburg</city>
+        <country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russian</country>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1980-01-01T00:00:00</creationDate>
+        <language_Of_Songs rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</language_Of_Songs>
+        <wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/DDT_(band)</wiki_link>
+        <rdfs:label xml:lang="en">DDT</rdfs:label>
+        <rdfs:label xml:lang="ru">ДДТ</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Dangerous_Kind -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Dangerous_Kind">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Black_Roses"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=SLxB5NSUH-w</uri>
+        <rdfs:label xml:lang="en">Dangerous Kind</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Dead_Letters -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Dead_Letters">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Back_in_the_Picture"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#First_Day_of_My_Life"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Funeral_Song"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Guilty"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Not_Like_the_Other_Girls"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Still_Standing"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Time_to_Burn"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/Dead_Letters</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39.49</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2003-03-21T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Dead Letters</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Dead_Promises -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Dead_Promises">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=bbJWyOlPbIs</uri>
+        <rdfs:label xml:lang="en">Dead Promises</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Dirty_Moose -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Dirty_Moose">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=15YSeSq7on8</uri>
+        <rdfs:label xml:lang="en">Dirty Moose</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Disco-nnect -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Disco-nnect">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=cQy7U4gnMVw</uri>
+        <rdfs:label xml:lang="en">Disco-nnect</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Eero_Aleksi_Heinonen -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Eero_Aleksi_Heinonen">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#FENDER_TONY_FRANKLIN_FL_PB"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eero</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1979-10-27T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helsinki</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heinonen</secondName>
+        <rdfs:label xml:lang="en">Eero Aleksi Heinonen</rdfs:label>
+        <rdfs:label xml:lang="ru">Ээро Алекси Хейнонен</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Electro -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Electro">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:label xml:lang="en">Electro</rdfs:label>
+        <rdfs:label xml:lang="ru">Электро</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#EveryDay -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#EveryDay">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#All_That_You_Give"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#All_Things_to_All_Men"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Burn_Out"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Evolution"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Flite"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Horizon"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Oregon"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.14</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-05-01T00:00:00</releaseDate>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Every_Day_(album)</releaseDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Evolution -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Evolution">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=oiGh6mIMVEs</uri>
+        <rdfs:label xml:lang="en">Evolution</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#FENDER_TONY_FRANKLIN_FL_PB -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#FENDER_TONY_FRANKLIN_FL_PB">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Bas-guitar"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Eero_Aleksi_Heinonen"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FENDER</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USA</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TONY FRANKLIN FL PB</model>
+        <rdfs:label xml:lang="en">FENDER TONY FRANKLIN FL PB</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Fender_American_Special_Telecaster -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Fender_American_Special_Telecaster">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Electric_Guitar"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Alexey_Fedichev"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fender</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USA</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">American Special Telecaster MN Vintage Blonde</model>
+        <rdfs:label xml:lang="en">Fender American Special Telecaster</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#First_Day_of_My_Life -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#First_Day_of_My_Life">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=oBvbX571P3s</uri>
+        <rdfs:label xml:lang="en">First Day of My Life</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Flite -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Flite">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=8YplCJukBPI</uri>
+        <rdfs:label xml:lang="en">Flite</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Folk_Music -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Folk_Music">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:label xml:lang="en">Folk Music</rdfs:label>
+        <rdfs:label xml:lang="ru">Народная музыка</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Fool -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Fool">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=dsWbRmiSUVM</uri>
+        <rdfs:label xml:lang="en">Fool</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Frog -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Frog">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=mHdraOPkMSU</uri>
+        <rdfs:label xml:lang="en">Frog</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Funeral_Song -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Funeral_Song">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Qyc3dAMKtqA</uri>
+        <rdfs:label xml:lang="en">Funeral Song</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Funky_Jam -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Funky_Jam">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=BzmhmiVSlOQ</uri>
+        <rdfs:label xml:lang="en">Funky Jam</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Ghostbusters -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Ghostbusters">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=3lA9L7iwinE</uri>
+        <rdfs:label xml:lang="en">Ghostbusters</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Godin_Redline_2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Godin_Redline_2">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Electric_Guitar"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Stuart_McCallum"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Godin</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USA</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Redline 2</model>
+        <rdfs:label xml:lang="en">Godin Redline 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Got_You_on_My_Mind -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Got_You_on_My_Mind">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=A-nWaFEdDWI</uri>
+        <rdfs:label xml:lang="en">Got You on My Mind</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Guilty -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Guilty">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=eOdr_FlBPBk</uri>
+        <rdfs:label xml:lang="en">Guilty</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Have_a_Little_Mercy -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Have_a_Little_Mercy">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=CzLjbOYFj9I</uri>
+        <rdfs:label xml:lang="en">Have a Little Mercy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Heart_of_Misery -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Heart_of_Misery">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=ZpmO3eJ_DTE</uri>
+        <rdfs:label xml:lang="en">Heart of Misery</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Heartbreaker -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Heartbreaker">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=RDtMUiKoXXk</uri>
+        <rdfs:label xml:lang="en">Heartbreaker</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Heavy -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Heavy">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=QpzXRNGN4wc</uri>
+        <rdfs:label xml:lang="en">Heavy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#City_of_the_Dead"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Dirty_Moose"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Help_Me_Sing"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Liquid"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Man_in_the_Street"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Pa-Pa"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Swimming_with_the_Kids"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Tempo"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Tonight_Tonight"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Vibe"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/Hell_of_a_Tester</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.44</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1998-10-02T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Hell of a Tester</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Help_Me_Sing -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Help_Me_Sing">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=wLxsMTS3pUo</uri>
+        <rdfs:label xml:lang="en">Help Me Sing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Promises"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Heart_of_Misery"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Immortal"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Keep_Your_Heart_Broken"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Sail_Away"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Shot"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Don&apos;t_Let_Go"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Lucifer&apos;s_Angel"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Night_After_Night_(Out_of_the_Shadows)"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/Hide_from_the_Sun</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">44.57</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-09-21T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Hide from the Sun</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Hip-hop -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Hip-hop">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:label xml:lang="en">Hip-hop</rdfs:label>
+        <rdfs:label xml:lang="ru">Хип-хоп</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#History_of_Sound -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#History_of_Sound">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Concert"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <performedBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <annotation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;We are pleased that the program has happened,&quot; says the group leader, &quot;we have the opportunity to expand the boundaries of meanings and make our musical fields experimental. The main task is to place all the songs that we want to play, within the limits of one concert &quot;</annotation>
+        <date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-11-12T18:00:00</date>
+        <ticketPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</ticketPrice>
+        <rdfs:label xml:lang="en">History of Sound</rdfs:label>
+        <rdfs:label xml:lang="ru">История Звука</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Horizon -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Horizon">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=LdINTPZVKJI</uri>
+        <rdfs:label xml:lang="en">Horizon</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Ice -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Ice">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=m-JmVXT2hJc</uri>
+        <rdfs:label xml:lang="en">Ice</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Immortal -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Immortal">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=XTUARaFZquI</uri>
+        <rdfs:label xml:lang="en">Immortal</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#In_the_City -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#In_the_City">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=9aEF2so3aq8</uri>
+        <rdfs:label xml:lang="en">In the City</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Into -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Into">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Bullet"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Chill"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Heartbreaker"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Last_Waltz"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Madness"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Smash"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Someone_Else"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#One_&amp;_Only"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/Into</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.33</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2001-10-29T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Into</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Jailer -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Jailer">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=ltkYZ5LfYDI</uri>
+        <rdfs:label xml:lang="en">Jailer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Jason_Swinscoe -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Jason_Swinscoe">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jason</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1989-03-12T00:00:00</birthDate>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">London</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Great Britian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Swinscoe</secondName>
+        <rdfs:label xml:lang="en">Jason Swinscoe</rdfs:label>
+        <rdfs:label xml:lang="ru">Джейсон Свинскоу</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Jazz -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Jazz">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <hasBand rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Jason_Swinscoe"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Luke_Flowers"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Nick_Ramm"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Stuart_McCallum"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#EveryDay"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Ma_Fleur"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <best_years rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1920-1940s</best_years>
+        <creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1910-01-01T00:00:00</creation_date>
+        <genreCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USA</genreCountry>
+        <genre_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Jazz</genre_wiki_link>
+        <rdfs:label xml:lang="en">Jazz</rdfs:label>
+        <rdfs:label xml:lang="ru">Джаз</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Julen_Är_Här_Igen -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Julen_Är_Här_Igen">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=pb1FDoflxgE</uri>
+        <rdfs:label xml:lang="en">Julen Är Här Igen</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Justify -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Justify">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Black_Roses"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Y_fGiWm7Cn4</uri>
+        <rdfs:label xml:lang="en">Justify</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Keep_Your_Heart_Broken -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Keep_Your_Heart_Broken">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=RPVhYip-GRo</uri>
+        <rdfs:label xml:lang="en">Keep Your Heart Broken</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Kola -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Kola">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=9d0ljw-VEVQ</uri>
+        <rdfs:label xml:lang="en">Kola</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Konstantin_Shumailov -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Konstantin_Shumailov">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#Yamaha_PSR-E453"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Konstantin</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1967-09-20T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USSR</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Petersburg</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shumailov</secondName>
+        <rdfs:label xml:lang="en">Konstantin Shumailov</rdfs:label>
+        <rdfs:label xml:lang="ru">Константин Шумайлов</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Last_Waltz -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Last_Waltz">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=AzDutHgB8bc</uri>
+        <rdfs:label xml:lang="en">Last Waltz</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Lauri_Ylonen -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lauri</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1979-04-23T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helsinki</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ylönen</secondName>
+        <rdfs:label xml:lang="en">Lauri Ylonen</rdfs:label>
+        <rdfs:label xml:lang="ru">Лаури Юлёнен</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Life_705 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Life_705">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Z8_ahiBs3jQ</uri>
+        <rdfs:label xml:lang="en">Life 705</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Liquid -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Liquid">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=xRPEydf4M44</uri>
+        <rdfs:label xml:lang="en">Liquid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Lost_and_Lonely -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Lost_and_Lonely">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Black_Roses"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=g1DbQ8goCrQ</uri>
+        <rdfs:label xml:lang="en">Lost and Lonely</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Lovely_Love -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Lovely_Love">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B5%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F_%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2%D1%8C</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">44.3</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-04-19T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Lovely Love</rdfs:label>
+        <rdfs:label xml:lang="ru">Прекрасная любовь</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Luke_Flowers -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Luke_Flowers">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#PEACE_DP-210BK-22"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luke</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1967-09-20T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Great Britian</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">London</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Great Britian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Flowers</secondName>
+        <rdfs:label xml:lang="en">Luke Flowers</rdfs:label>
+        <rdfs:label xml:lang="ru">Люк Флауэрс</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Ma_Fleur -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Ma_Fleur">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Ma_Fleur</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">54.17</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-05-07T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Ma Fleur</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Madness -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Madness">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=0rdfNvjJxKA</uri>
+        <rdfs:label xml:lang="en">Madness</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Man_in_the_Street -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Man_in_the_Street">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=xrdALt7pAKw</uri>
+        <rdfs:label xml:lang="en">Man in the Street</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Missing -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Missing">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BF%D0%B0%D0%B2%D1%88%D0%B8%D0%B9_%D0%B1%D0%B5%D0%B7_%D0%B2%D0%B5%D1%81%D1%82%D0%B8_(%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%BC)</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">69.29</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-04-23T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Missing</rdfs:label>
+        <rdfs:label xml:lang="ru">Пропавший без вести</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Motion -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Motion">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#All_That_You_Give"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#All_Things_to_All_Men"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Burn_Out"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Evolution"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Flite"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Horizon"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Oregon"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Motion_(The_Cinematic_Orchestra_album)</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">51.09</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1999-01-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Motion</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Myself -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Myself">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=1GpOFkUmR3E</uri>
+        <rdfs:label xml:lang="en">Myself</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Mysteria -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Mysteria">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Single"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=URtrXoMB6tA</uri>
+        <rdfs:label xml:lang="en">Mysteria</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#New_World -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#New_World">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Because_of_You"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Disco-nnect"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Got_You_on_My_Mind"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Have_a_Little_Mercy"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Heavy"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#In_the_City"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#What_Are_You_Waiting_For?"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#You_Don&apos;t_Remember_My_Name"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/New_World_(Lauri_Yl%C3%B6nen_album)</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.25</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-03-30T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">New World</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Nick_Ramm -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Nick_Ramm">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#ROLAND_JUPITER-50"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nick</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1983-09-14T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USA</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">London</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greab Britian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ramm</secondName>
+        <rdfs:label xml:lang="en">Nick Ramm</rdfs:label>
+        <rdfs:label xml:lang="ru">Ник Рам</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Not_Like_the_Other_Girls -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Not_Like_the_Other_Girls">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=AlHeotNW7Yg</uri>
+        <rdfs:label xml:lang="en">Not Like the Other Girls</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Oregon -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Oregon">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Wt1Dij0Lya8</uri>
+        <rdfs:label xml:lang="en">Oregon</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Otherwise -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Otherwise">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B0%D1%87%D0%B5</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-10-25T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Otherwise</rdfs:label>
+        <rdfs:label xml:lang="ru">Иначе</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Outflow -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Outflow">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=hMrG5FtV5dU</uri>
+        <rdfs:label xml:lang="en">Outflow</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#PEACE_DP-210BK-22 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#PEACE_DP-210BK-22">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Drums"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Luke_Flowers"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PEACE</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taiwan</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DP-210BK-22</model>
+        <rdfs:label xml:lang="en">PEACE DP-210BK-22</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#PEARL_RFP924XFP -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#PEARL_RFP924XFP">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Drums"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Aki-Markus_Juhani_Hakala"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PEARL</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">China</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RFP924XFP</model>
+        <rdfs:label xml:lang="en">PEARL RFP924XFP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Pa-Pa -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Pa-Pa">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=ZemtbWzg_Jk</uri>
+        <rdfs:label xml:lang="en">Pa-Pa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Panda -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Panda">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=CxsOt8zlgPk</uri>
+        <rdfs:label xml:lang="en">Panda</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Paradise -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Paradise">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Single"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=ZziV0KYyucM</uri>
+        <rdfs:label xml:lang="en">Paradise</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Pauli_Esko_Antero_Rantasalmi -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Pauli_Esko_Antero_Rantasalmi">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#Squier_Standard_Stratocaster"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pauli</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1979-05-01T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singapore</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singapore</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rantasalmi</secondName>
+        <rdfs:label xml:lang="en">Pauli Esko Antero Rantasalmi</rdfs:label>
+        <rdfs:label xml:lang="ru">Паули Эско Антеро Рантасалми</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Peep -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Peep">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Fool"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Frog"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Funky_Jam"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Ghostbusters"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Julen_Är_Här_Igen"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Life_705"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Myself"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Outflow"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Postman"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Shame"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Small"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/Peep</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">44.25</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">1996-09-23T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Peep</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Periphery -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Periphery">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B8%D1%84%D0%B5%D1%80%D0%B8%D1%8F_(%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%BC)</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">31.12</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1984-05-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Periphery</rdfs:label>
+        <rdfs:label xml:lang="ru">Периферия</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Pig_on_Rainbow -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Pig_on_Rainbow">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%A1%D0%B2%D0%B8%D0%BD%D1%8C%D1%8F_%D0%BD%D0%B0_%D1%80%D0%B0%D0%B4%D1%83%D0%B3%D0%B5</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">54.37</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1982-01-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Pig on Rainbow</rdfs:label>
+        <rdfs:label xml:lang="ru">Свинья на радуге</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Playboys -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Playboys">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Blue"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Carousel"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Ice"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Jailer"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Kola"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Panda"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Raggatip"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Sold"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Sophia"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Violence"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Wellwell"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Wicked_Moments"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/Playboys</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39.46</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1997-08-20T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Playboys</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Pop_Music -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Pop_Music">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:label xml:lang="en">Pop Music</rdfs:label>
+        <rdfs:label xml:lang="ru">Поп-музыка</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Postman -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Postman">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=UV5PkmJBRis</uri>
+        <rdfs:label xml:lang="en">Postman</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#RAP -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#RAP">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:label xml:lang="en">RAP</rdfs:label>
+        <rdfs:label xml:lang="ru">Рэп</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#ROLAND_JUPITER-50 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#ROLAND_JUPITER-50">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Synthesizer"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Nick_Ramm"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ROLAND</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taiwan</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JUPITER-50</model>
+        <rdfs:label xml:lang="en">ROLAND JUPITER-50</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Raggatip -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Raggatip">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Iccz5kMJmpw</uri>
+        <rdfs:label xml:lang="en">Raggatip</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Rock -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Rock">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <hasBand rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <hasBand rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Aki-Markus_Juhani_Hakala"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Alena_Romanova"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Alexey_Fedichev"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Artsiom_Mamay"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Eero_Aleksi_Heinonen"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Konstantin_Shumailov"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Pauli_Esko_Antero_Rantasalmi"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Roman_Nevelov"/>
+        <hasMusician rdf:resource="http://localhost:8080/artem/ontologies/music#Yri_Shevchuk"/>
+        <hasPerformance rdf:resource="http://localhost:8080/artem/ontologies/music#History_of_Sound"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Mysteria"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Paradise"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Stranger"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Wonderman"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Actress_Spring"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Black_Roses"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Born_in_USSR"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Compromise"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Lovely_Love"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Missing"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Otherwise"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Periphery"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Pig_on_Rainbow"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Thaw"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Time"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Transparent"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#Unity_Part_I"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#World_number_zero"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#August&apos;s_Snowstorm"/>
+        <hasWork rdf:resource="http://localhost:8080/artem/ontologies/music#It&apos;s_all"/>
+        <best_years rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1960th - present time</best_years>
+        <creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1950-01-01T00:00:00</creation_date>
+        <genreCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Great Britian</genreCountry>
+        <genre_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Rock_music</genre_wiki_link>
+        <rdfs:label xml:lang="en">Rock</rdfs:label>
+        <rdfs:label xml:lang="ru">Рок</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Roman_Nevelov -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Roman_Nevelov">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#YMAHA_RBX4A2"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roman</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1973-12-21T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USSR</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saint_Petersburg</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nevelev</secondName>
+        <rdfs:label xml:lang="en">Roman Nevelov</rdfs:label>
+        <rdfs:label xml:lang="ru">Роман Невелев</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Run_to_You -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Run_to_You">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Black_Roses"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=CmkC35yf0vo</uri>
+        <rdfs:label xml:lang="en">Run to You</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Sail_Away -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Sail_Away">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=pL-i4Lcgk2w</uri>
+        <rdfs:label xml:lang="en">Sail Away</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Shame -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Shame">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Sk_D8Uyq2zM</uri>
+        <rdfs:label xml:lang="en">Shame</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Shot -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Shot">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=b6L42fF7MI4</uri>
+        <rdfs:label xml:lang="en">Shot</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Small -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Small">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=w_KT_pbJTXA</uri>
+        <rdfs:label xml:lang="en">Small</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Smash -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Smash">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=HKzpT-TqV-k</uri>
+        <rdfs:label xml:lang="en">Smash</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Sold -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Sold">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Ctg5JUUijtA</uri>
+        <rdfs:label xml:lang="en">Sold</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Someone_Else -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Someone_Else">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=l8s_HSck1ms</uri>
+        <rdfs:label xml:lang="en">Someone Else</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Sophia -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Sophia">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=2vPI_2snUOg</uri>
+        <rdfs:label xml:lang="en">Sophia</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Squier_Standard_Stratocaster -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Squier_Standard_Stratocaster">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Electric_Guitar"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Pauli_Esko_Antero_Rantasalmi"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Squier</brend>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indonesia</model>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Standard Stratocaster</model>
+        <rdfs:label xml:lang="en">Squier Standard Stratocaster</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Still_Standing -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Still_Standing">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=rfa2MyA2wf4</uri>
+        <rdfs:label xml:lang="en">Still Standing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Stranger -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Stranger">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Single"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=cYMD1CUPH4g</uri>
+        <rdfs:label xml:lang="en">Stranger</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Stuart_McCallum -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Stuart_McCallum">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#Godin_Redline_2"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stuart</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1973-12-21T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Great Britian</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">London</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Great Britian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">McCallum</secondName>
+        <rdfs:label xml:lang="en">Stuart McCallum</rdfs:label>
+        <rdfs:label xml:lang="ru">Стюарт Маккаллум</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Swimming_with_the_Kids -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Swimming_with_the_Kids">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=bArdfAEupFo</uri>
+        <rdfs:label xml:lang="en">Swimming with the Kids</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#TAMA_MA52ZS-SSR -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#TAMA_MA52ZS-SSR">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Drums"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Artsiom_Mamay"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TAMA</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japan</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA52ZS-SSR</model>
+        <rdfs:label xml:lang="en">TAMA MA52ZS-SSR</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Takamine_PT-05E -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Takamine_PT-05E">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Electric_Guitar"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Yri_Shevchuk"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Takamine</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japan</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PT-05E</model>
+        <rdfs:label xml:lang="en">Takamine PT-05E</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Tempo -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Tempo">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=0aLHv9j_qxo</uri>
+        <rdfs:label xml:lang="en">Tempo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Thaw -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Thaw">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D1%82%D0%B5%D0%BF%D0%B5%D0%BB%D1%8C_(%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%BC)</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.5</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1991-01-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Thaw</rdfs:label>
+        <rdfs:label xml:lang="ru">Оттепель</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#The_Cinematic_Orchestra">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Jason_Swinscoe"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Luke_Flowers"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Nick_Ramm"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Stuart_McCallum"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#EveryDay"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Ma_Fleur"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Motion"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Jazz"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">London</city>
+        <country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Great Britain</country>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1999-01-01T00:00:00</creationDate>
+        <language_Of_Songs rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</language_Of_Songs>
+        <wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/The_Cinematic_Orchestra</wiki_link>
+        <rdfs:label xml:lang="en">The Cinematic Orchestra</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#The_Rasmus -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#The_Rasmus">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Band"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Aki-Markus_Juhani_Hakala"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Eero_Aleksi_Heinonen"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <consistOf rdf:resource="http://localhost:8080/artem/ontologies/music#Pauli_Esko_Antero_Rantasalmi"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Black_Roses"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Peep"/>
+        <hasAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Mysteria"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Paradise"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Stranger"/>
+        <hasSingle rdf:resource="http://localhost:8080/artem/ontologies/music#Wonderman"/>
+        <city rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helsinki</city>
+        <country rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finland</country>
+        <creationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1994-01-01T00:00:00</creationDate>
+        <language_Of_Songs rdf:datatype="http://www.w3.org/2001/XMLSchema#string">en</language_Of_Songs>
+        <wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/The_Rasmus</wiki_link>
+        <rdfs:label xml:lang="en">The Rasmus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Time -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Time">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%92%D1%80%D0%B5%D0%BC%D1%8F_(%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%BC)</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">38.05</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1985-11-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Time</rdfs:label>
+        <rdfs:label xml:lang="ru">Время</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Time_to_Burn -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Time_to_Burn">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Dead_Letters"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=d8Af955KUHk</uri>
+        <rdfs:label xml:lang="en">Time to Burn</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Tonight_Tonight -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Tonight_Tonight">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=fS56TmLSxnU</uri>
+        <rdfs:label xml:lang="en">Tonight Tonight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Transparent -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Transparent">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.0</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-05-16T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Transparent</rdfs:label>
+        <rdfs:label xml:lang="ru">Прозрачный</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Unity_Part_I -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Unity_Part_I">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%95%D0%B4%D0%B8%D0%BD%D0%BE%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE._%D0%A7%D0%B0%D1%81%D1%82%D1%8C_I</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">53.4</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2002-01-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">Unity Part I</rdfs:label>
+        <rdfs:label xml:lang="ru">Единочество Часть 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Vibe -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Vibe">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hell_of_a_Tester"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Jyc4QkjcST8</uri>
+        <rdfs:label xml:lang="en">Vibe</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Violence -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Violence">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=ekMX_g5lYlU</uri>
+        <rdfs:label xml:lang="en">Violence</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Wellwell -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Wellwell">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=raWu1e8qjp8</uri>
+        <rdfs:label xml:lang="en">Wellwell</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Wicked_Moments -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Wicked_Moments">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Playboys"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=FIF5BeNy3fU</uri>
+        <rdfs:label xml:lang="en">Wicked Moments</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Wonderman -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Wonderman">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Single"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=4iADJzARx2w</uri>
+        <rdfs:label xml:lang="en">Wonderman</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#World_number_zero -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#World_number_zero">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80_%D0%BD%D0%BE%D0%BB%D1%8C</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">54.34</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1999-03-25T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">World number zero</rdfs:label>
+        <rdfs:label xml:lang="ru">Мир номер ноль</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#YMAHA_RBX4A2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#YMAHA_RBX4A2">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Bas-guitar"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Roman_Nevelov"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YMAHA</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japan</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RBX4A2</model>
+        <rdfs:label xml:lang="en">YMAHA RBX4A2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Yamaha_PSR-E453 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Yamaha_PSR-E453">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Synthesizer"/>
+        <isInstrumentOf rdf:resource="http://localhost:8080/artem/ontologies/music#Konstantin_Shumailov"/>
+        <brend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamaha</brend>
+        <manufacturerCountry rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Japan</manufacturerCountry>
+        <model rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PSR-E453</model>
+        <rdfs:label xml:lang="en">Yamaha PSR-E453</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Yri_Shevchuk -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Yri_Shevchuk">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Musician"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <memberOf rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <playOn rdf:resource="http://localhost:8080/artem/ontologies/music#Takamine_PT-05E"/>
+        <FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuri</FirstName>
+        <birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1957-05-16T00:00:00</birthDate>
+        <birthPlace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">USSR</birthPlace>
+        <cityMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">St.Peterburg</cityMusician>
+        <countryMusician rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russian</countryMusician>
+        <gender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</gender>
+        <secondName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shevchuk</secondName>
+        <rdfs:label xml:lang="en">Yri Shevchuk</rdfs:label>
+        <rdfs:label xml:lang="ru">Юрий Шевчук</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#August&apos;s_Snowstorm -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#August&apos;s_Snowstorm">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%B5%D0%BB%D1%8C_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">58.26</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2000-02-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">August&apos;s Snowstorm</rdfs:label>
+        <rdfs:label xml:lang="ru">Метель Августа</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Don&apos;t_Let_Go -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Don&apos;t_Let_Go">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=WsMJSoaT_UM</uri>
+        <rdfs:label xml:lang="en">Don&apos;t Let Go</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#It&apos;s_all -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#It&apos;s_all">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Album"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#DDT"/>
+        <album_wiki_link rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ru.wikipedia.org/wiki/%D0%AD%D1%82%D0%BE_%D0%B2%D1%81%D1%91%E2%80%A6</album_wiki_link>
+        <durability rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.5</durability>
+        <lang rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rus</lang>
+        <releaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1994-01-01T00:00:00</releaseDate>
+        <rdfs:label xml:lang="en">It&apos;s all</rdfs:label>
+        <rdfs:label xml:lang="ru">Это все...</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Livin&apos;_in_a_World_without_You -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Livin&apos;_in_a_World_without_You">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Black_Roses"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=lNKTWyU_0c4</uri>
+        <rdfs:label xml:lang="en">Livin&apos; in a World without You</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Lucifer&apos;s_Angel -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Lucifer&apos;s_Angel">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=AWW3nJy5nI4</uri>
+        <rdfs:label xml:lang="en">Lucifer&apos;s Angel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#Night_After_Night_(Out_of_the_Shadows) -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#Night_After_Night_(Out_of_the_Shadows)">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Hide_from_the_Sun"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://rutube.ru/video/16cdc369af9d17e41c4f20b5ea88c712/</uri>
+        <rdfs:label xml:lang="en">Night After Night (Out of the Shadows)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#One_&amp;_Only -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#One_&amp;_Only">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#Into"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#The_Rasmus"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=Qqu-FGLOUbE</uri>
+        <rdfs:label xml:lang="en">One &amp; Only</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#R&amp;B -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#R&amp;B">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Genre"/>
+        <rdfs:label xml:lang="en">R&amp;B</rdfs:label>
+        <rdfs:label xml:lang="ru">Ритм-энд-блюз</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#What_Are_You_Waiting_For? -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#What_Are_You_Waiting_For?">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=bo_Hs3IyiBQ</uri>
+        <rdfs:label xml:lang="en">What Are You Waiting For?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/artem/ontologies/music#You_Don&apos;t_Remember_My_Name -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:8080/artem/ontologies/music#You_Don&apos;t_Remember_My_Name">
+        <rdf:type rdf:resource="http://localhost:8080/artem/ontologies/music#Song"/>
+        <hasGenre rdf:resource="http://localhost:8080/artem/ontologies/music#Rock"/>
+        <isSongFromAlbum rdf:resource="http://localhost:8080/artem/ontologies/music#New_World"/>
+        <isWorkBy rdf:resource="http://localhost:8080/artem/ontologies/music#Lauri_Ylonen"/>
+        <uri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.youtube.com/watch?v=m_fYV9G_aoM</uri>
+        <rdfs:label xml:lang="en">You Don&apos;t Remember My Name</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

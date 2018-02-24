@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <display-name>OntologyServlet</display-name>
+        <servlet-name>OntologyServlet</servlet-name>
+        <servlet-class>by.epam.training.controllers.InitServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OntologyServlet</servlet-name>
+        <url-pattern>/music/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>BandServlet</display-name>
+        <servlet-name>BandServlet</servlet-name>
+        <servlet-class>by.epam.training.controllers.BandServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BandServlet</servlet-name>
+        <url-pattern>/band/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>GenreServlet</display-name>
+        <servlet-name>GenreServlet</servlet-name>
+        <servlet-class>by.epam.training.controllers.GenreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenreServlet</servlet-name>
+        <url-pattern>/genre/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>WorkServlet</display-name>
+        <servlet-name>WorkServlet</servlet-name>
+        <servlet-class>by.epam.training.controllers.WorkServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WorkServlet</servlet-name>
+        <url-pattern>/work/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>MusicianServlet</display-name>
+        <servlet-name>MusicianServlet</servlet-name>
+        <servlet-class>by.epam.training.controllers.MusicianServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MusicianServlet</servlet-name>
+        <url-pattern>/musician/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>InstrumentServlet</display-name>
+        <servlet-name>InstrumentServlet</servlet-name>
+        <servlet-class>by.epam.training.controllers.InstrumentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InstrumentServlet</servlet-name>
+        <url-pattern>/instrument/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>PerformanceServlet</display-name>
+        <servlet-name>PerformanceServlet</servlet-name>
+        <servlet-class>by.epam.training.controllers.PerformanceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PerformanceServlet</servlet-name>
+        <url-pattern>/performance/*</url-pattern>
+    </servlet-mapping>
+</web-app>
